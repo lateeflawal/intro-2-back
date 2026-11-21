@@ -1,4 +1,4 @@
-import mongoose, {schema} from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 
 // Models are responsible for defining the structure of the data and interacting with the database. They provide an abstraction layer that allows developers to work with data in a more intuitive way, without having to write complex database queries. Models typically include methods for creating, reading, updating, and deleting data, as well as validation rules to ensure that the data being stored is accurate and consistent.

@@ -18,14 +18,36 @@ dotenv.config();
 
 // export default connectDB;
 
+// const connectDB = async () => {
+//   try {
+//     const conn = await mongoose.connect(`${process.env.MONGO_URI}`);
+//     console.log(conn.connection.host);
+//   } catch (error) {
+//     console.error('Error connecting to MongoDB:', error);
+//     process.exit(1);
+//   }
+// };
+
+// export default connectDB;
+
+// // ✅ Correct Structure
+// const startServer = async () => {
+//     try {
+//         await connectDB(); // Only called here
+//         app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+//     } catch (error) { 'Error connecting to MongoDB:', error }
+// };
+
+// startServer(); // Only called once
+
 const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(`${process.env.MONGO_URI}`);
-    console.log(conn.connection.host);
-  } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
-    process.exit(1);
-  }
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+        process.exit(1);
+    }
 };
 
 export default connectDB;
