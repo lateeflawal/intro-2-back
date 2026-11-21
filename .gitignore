@@ -3,6 +3,9 @@
 ### Universal ###
 # Common files that should be ignored in all projects
 
+node_modules/
+.env
+
 # Logs
 *.log
 # Temporary files
@@ -11,7 +14,6 @@
 
 *.bak
 # Environment files (containing secrets, API keys, credentials)
-.env
 *.env
 .env.*
 
