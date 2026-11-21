@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import connectDB from './config/database.js';
+// import dotenv from 'dotenv';
+// import connectDB from './config/database.js';
 import app from './app.js';
 
 // console.log("1. Code reached the bottom!");

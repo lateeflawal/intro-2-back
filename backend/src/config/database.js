@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
-import { DB_NAME } from './constant.js';
+// import { DB_NAME } from './constant.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
+// The connectDB function establishes a connection to the MongoDB database using Mongoose. It retrieves the MongoDB connection URI from the environment variables (process.env.MONGO_URI) and attempts to connect to the database. If the connection is successful, it logs the host of the connected database. If there is an error during the connection process, it logs the error and exits the process with a non-zero status code, indicating a failure to connect to the database.
 
 // const connectDB = async () => {
 //   try {
