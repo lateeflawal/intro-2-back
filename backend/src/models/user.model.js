@@ -28,7 +28,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
         maxlength: 100,
+        select: false // <-- This hides the password from API responses
     },
+   
     // {
     //     timestamps: true
     // }

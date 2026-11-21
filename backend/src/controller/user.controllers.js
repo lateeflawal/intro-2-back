@@ -1,4 +1,5 @@
 import User from '../models/user.model.js';
+import bcrypt from 'bcrypt';
 
 // Controllers are responsible for handling incoming requests and returning responses to the client. They act as an intermediary between the models and the views, processing data and applying business logic. They are the decision-makers that determine how to respond to a request based on the data received and the application's requirements. Controllers typically contain methods that correspond to different routes or endpoints in the application, allowing for organized and maintainable code.
 
@@ -41,6 +42,14 @@ import User from '../models/user.model.js';
 //   }
 // };
 
+
+// Then create the user
+// const user = await User.create({
+//     username,
+//     email: email.toLowerCase(),
+    
+// });
+
 const createUser = async (req, res, next) => {
     console.log("Received Body:", req.body);
 
@@ -58,10 +67,14 @@ const createUser = async (req, res, next) => {
 
         console.log("About to create user..."); // NEW LOG
 
+        // Hash the password
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+
         const user = await User.create({
             username,
             email: email.toLowerCase(),
-            password
+            password: hashedPassword // Save the hashed version!
         });
 
         console.log("User created successfully!"); // NEW LOG

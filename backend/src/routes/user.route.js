@@ -7,10 +7,10 @@ import createUser from '../controller/user.controllers.js'
 
 const router = Router();
 
-router.route('/createUser').post(createUser)
+// router.route('/createUser').post(createUser)
 
 // router.get('/users/:id', getUser);
-// router.post('/users', createUser);
+router.post('/createUser', createUser);
 // router.put('/users/:id', updateUser);
 // router.delete('/users/:id', deleteUser);
 

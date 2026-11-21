@@ -1,12 +1,18 @@
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 // import connectDB from './config/database.js';
 import app from './app.js';
 
 // console.log("1. Code reached the bottom!");
 
-// dotenv.config();
+dotenv.config();
 // connectDB();
 // const PORT = process.env.PORT || 5000;
+
+import mongoose from 'mongoose';
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ DATABASE CONNECTED DIRECTLY!"))
+  .catch(err => console.error("❌ DB CONNECTION FAILED:", err));
+
 app.get('/', (req, res) => {
     res.send("Hello! My backend is working!");
 });

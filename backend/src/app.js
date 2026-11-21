@@ -6,7 +6,7 @@ const app = express(); // Create an instance of the Express application
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 
 // route declaration
@@ -15,15 +15,15 @@ app.use('/api/v1/users', userRouter);
 
 // Example route: http://localhost:5000/api/v1/users/register
 
-app.use((err, req, res, next) => {
-    console.error("🔥 BACKEND ERROR:", err); // Look at your terminal for this!
+// app.use((err, req, res, next) => {
+//     console.error("🔥 BACKEND ERROR:", err); // Look at your terminal for this!
     
-    res.status(500).json({
-        message: err.message || "Unknown error",
-        // Stringify the error so HTTPie can read it
-        details: JSON.stringify(err, Object.getOwnPropertyNames(err)) 
-    });
-});
+//     res.status(500).json({
+//         message: err.message || "Unknown error",
+//         // Stringify the error so HTTPie can read it
+//         details: JSON.stringify(err, Object.getOwnPropertyNames(err)) 
+//     });
+// });
 
 // app.use((err, req, res, next) => {
 //     // Print the full error to your VS Code terminal
